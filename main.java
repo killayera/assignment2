@@ -21,3 +21,9 @@ class MyArrayList<E> implements MyList<E> {
         }
         elements[size++] = element;
     }
+    public E get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        return (E) elements[index];
+    }
