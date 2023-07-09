@@ -13,3 +13,11 @@ class MyArrayList<E> implements MyList<E> {
         elements = new Object[10]; // Initial capacity of 10
         size = 0;
     }
+    public void add(E element) {
+        if (size == elements.length) {
+            Object[] newElements = new Object[elements.length * 2];
+            System.arraycopy(elements, 0, newElements, 0, size);
+            elements = newElements;
+        }
+        elements[size++] = element;
+    }
