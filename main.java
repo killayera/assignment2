@@ -27,3 +27,12 @@ class MyArrayList<E> implements MyList<E> {
         }
         return (E) elements[index];
     }
+    public void remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        for (int i = index; i < size - 1; i++) {
+            elements[i] = elements[i + 1];
+        }
+        elements[--size] = null;
+    }
