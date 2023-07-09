@@ -9,3 +9,7 @@ interface MyList<E> {
 class MyArrayList<E> implements MyList<E> {
     private Object[] elements;
     private int size;
+    public MyArrayList() {
+        elements = new Object[10]; // Initial capacity of 10
+        size = 0;
+    }
