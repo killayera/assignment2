@@ -36,3 +36,19 @@ class MyArrayList<E> implements MyList<E> {
         }
         elements[--size] = null;
     }
+    public int size() {
+        return size;
+    }
+}
+class MyLinkedList<E> implements MyList<E> {
+    private class Node {
+        E element;
+        Node next;
+        Node previous;
+
+        Node(E element, Node next, Node previous) {
+            this.element = element;
+            this.next = next;
+            this.previous = previous;
+        }
+    }
